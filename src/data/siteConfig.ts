@@ -1,0 +1,73 @@
+import { ReleaseInfo } from '../types';
+
+export const siteConfig = {
+  name: 'Qura Language',
+  shortName: 'Qura',
+  organization: 'Qura Technologies',
+  maintainer: 'Vaibhav Chaudhary',
+  maintainerGithub: 'https://github.com/vaibhavchaudharybca23-26-sys',
+  githubRepo: 'https://github.com/vaibhavchaudharybca23-26-sys/qura-language',
+  githubIssues: 'https://github.com/vaibhavchaudharybca23-26-sys/qura-language/issues',
+  githubDiscussions: 'https://github.com/vaibhavchaudharybca23-26-sys/qura-language/discussions',
+  githubSecurityAdvisories: 'https://github.com/vaibhavchaudharybca23-26-sys/qura-language/security/advisories',
+  licenseName: 'Apache-2.0',
+  currentVersion: 'v0.1.0-alpha',
+  cliVersion: 'v0.1.0',
+  releaseStatus: 'Developer Preview',
+  tagline: 'Balanced by design. Powerful by capability. Clear by default.',
+  description:
+    'Qura is an evolving general-purpose programming language focused on clear code, approachable tooling, and native Cranelift compilation.',
+  targetPlatform: 'Windows x86_64 (x86_64-pc-windows-msvc)',
+  publishedRelease: {
+    version: 'v0.1.0-alpha',
+    tag: 'v0.1.0-alpha',
+    channel: 'Developer Preview',
+    releaseDate: 'October 14, 2026',
+    githubReleaseUrl: 'https://github.com/vaibhavchaudharybca23-26-sys/qura-language/releases/tag/v0.1.0-alpha',
+    summary:
+      'First public developer preview release of Qura Language, featuring native Windows x86_64 code generation via Cranelift, full lexical scope checking, built-in output runtime, diagnostic caret emitter, and developer CLI.',
+    highlights: [
+      'Cranelift Native Backend generating standalone Windows x86_64 PE/COFF binaries (.exe)',
+      'Built-in print() and println() standard output runtime for strings, signed/unsigned integers, and booleans',
+      'String literals with escape sequence support (\\n, \\r, \\t, \\\\, \\")',
+      'Explicit let and let mut bindings with strict lexical scoping and immutability guarantees',
+      'Supported primitive types: i32, i64, u32, u64, f64, bool, str, and unit ()',
+      'Control flow: while loops with loop-carried mutable state, if / else if / else expressions',
+      'Binary arithmetic (+, -, *, /, %), relational comparisons, and boolean logic',
+      'Developer CLI (qura check, qura build, qura run, qura doctor)',
+      'Official VS Code extension with complete TextMate grammar (qura-lang-0.1.0.vsix)',
+    ],
+    assets: [
+      {
+        name: 'Windows x64 Compiler Distribution Archive',
+        filename: 'qura-v0.1.0-alpha-windows-x64.zip',
+        size: '1.59 MB (1,671,343 bytes)',
+        sha256: 'b0820ed6d2ff03c4e5dd60ce6cf0f714bf5abfb8f5b27d41ed375f675645e8c8',
+        downloadUrl:
+          'https://github.com/vaibhavchaudharybca23-26-sys/qura-language/releases/download/v0.1.0-alpha/qura-v0.1.0-alpha-windows-x64.zip',
+        platform: 'Windows 10 / 11 (x86_64)',
+        description: 'Complete standalone distribution including qura.exe CLI, setup guide, examples, and VS Code extension.',
+        isPrimary: true,
+      },
+      {
+        name: 'Visual Studio Code Extension Package',
+        filename: 'qura-lang-0.1.0.vsix',
+        size: '8.48 KB (8,482 bytes)',
+        sha256: 'Included in verified release archive and repository',
+        downloadUrl: '/downloads/qura-lang-0.1.0.vsix',
+        platform: 'Cross-platform (VS Code / Cursor / VSCodium)',
+        description: 'Official syntax highlighting, bracket matching, and language configuration for .qura files.',
+        isPrimary: false,
+      },
+    ],
+    knownLimitations: [
+      'Compound Types: Structures (struct), enumerations (enum), and records are scheduled for Milestone 7.',
+      'Dynamic Collections: Growable lists (List<T>) and hash maps (Map<K, V>) are scheduled for Milestone 8.',
+      'C-ABI Foreign Function Interface: User-defined extern "C" bindings for native DLLs are scheduled for Milestone 9.',
+      'Multi-File Modules: Multi-file compilation and the import module system are scheduled for Milestone 10.',
+      'Host Linker Requirement: Native compilation requires Visual Studio C++ Build Tools or LLVM with Windows SDK installed.',
+      'String Operations: Dynamic string concatenation (+) is not yet implemented in v0.1.0-alpha; string literals are read-only.',
+      'Floating-point Output: The f64 primitive type is supported by sema and Cranelift, but formatting f64 in println() is scheduled for future runtime update.',
+    ],
+  } as ReleaseInfo,
+};
